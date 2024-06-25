@@ -1,0 +1,51 @@
+To check if a string is a palindrome, there are several approaches, each with its own time and space complexity considerations. Here are the common methods:
+
+### 1. Compare Characters Method
+
+**Approach:** Compare characters from start and end moving towards the center.
+
+- **Time Complexity:** O(n)
+  - Here, 'n' is the length of the string. In the worst case, we may need to compare each character of the string.
+- **Space Complexity:** O(1)
+  - Constant space is used as we only need a few variables to store indices.
+
+### 2. Reverse and Compare Method
+
+**Approach:** Reverse the string and compare it with the original.
+
+- **Time Complexity:** O(n)
+  - Reversing the string takes O(n) time, and comparing two strings also takes O(n) time.
+- **Space Complexity:** O(n)
+  - Additional space is used to store the reversed string.
+
+### 3. Using Slicing
+
+**Approach:** Use Python string slicing to compare the original string with its reverse.
+
+- **Time Complexity:** O(n)
+  - Slicing operation and comparison both take linear time.
+- **Space Complexity:** O(n)
+  - Similar to the reverse and compare method, space is needed for the reversed string.
+
+### 4. Using Deque
+
+**Approach:** Use a deque to efficiently compare characters from both ends of the string.
+
+- **Time Complexity:** O(n)
+  - Each addition and removal from the deque is O(1), and we perform this operation n/2 times on average.
+- **Space Complexity:** O(n)
+  - Additional space is used to store characters in the deque.
+
+### Time and Space Complexity Summary
+
+- **Time Complexity:** All methods have a time complexity of O(n), where 'n' is the length of the string. This is because each method involves examining each character at most once.
+  
+- **Space Complexity:** 
+  - The space complexity varies:
+    - Approaches using additional storage for reversed strings or deques have O(n) space complexity.
+    - The in-place character comparison method (first approach) has O(1) space complexity since it uses only a few extra variables.
+
+**Choosing the Method:**
+- The in-place character comparison method (first approach) is generally preferred for its O(1) space complexity unless there's a specific requirement to keep the original string intact or to use a different method for clarity or ease of implementation.
+
+Each method has its trade-offs, but all are efficient with respect to time complexity for checking palindromes.
